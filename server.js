@@ -1,13 +1,13 @@
-const express = require('express');
-const app = express();
-const PORT = 5000;
+import http from "http";
+import dotenv from "dotenv";
+import app from "./src/app.js";
+import "./src/config/db.js";
 
-// Simple test route
-app.get('/', (req, res) => {
-    res.send('Server is running!');
-});
+dotenv.config();
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 4000;
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+  console.log(`✅ API listening on http://localhost:${PORT}`);
 });
