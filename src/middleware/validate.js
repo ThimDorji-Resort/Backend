@@ -1,4 +1,3 @@
-// Generic Zod/Joi-style validator wrapper. Here we use Zod schemas.
 export default function validate(schema, where = "body") {
   return async (req, res, next) => {
     try {

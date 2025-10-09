@@ -11,4 +11,15 @@ const storage = new CloudinaryStorage({
   }),
 });
 
-export const uploadImage = multer({ storage });
+export const uploadImage = multer({ storage }); 
+
+const testimonialStorage = new CloudinaryStorage({
+  cloudinary,
+  params: async () => ({
+    folder: "hotel/testimonials",
+    resource_type: "image",
+    transformation: [{ quality: "auto", fetch_format: "auto" }],
+  }),
+});
+
+export const uploadTestimonialImage = multer({ storage: testimonialStorage });
