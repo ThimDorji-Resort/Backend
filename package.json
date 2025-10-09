@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ThimDorji-Resort/Backend#readme",
   "description": "",
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.7.0",
     "dotenv": "^17.2.2",
@@ -27,6 +28,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.2",
     "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
     "nodemailer": "^7.0.6"
   },
   "devDependencies": {

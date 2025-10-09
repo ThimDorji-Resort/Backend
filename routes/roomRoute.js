@@ -16,6 +16,10 @@ router.post('/', upload.array('images', 3), roomController.createRoom);
 
 // Get all rooms
 router.get('/rooms', roomController.getAllRooms);
+// ?=================\
+// Route to get available rooms
+// router.get('/room/available', roomController.checkAvailableRooms);
+router.get('/rooms/available', roomController.checkAvailableRooms);
 
 // Get single room by ID
 router.get('/rooms/:id', roomController.getRoomById);
@@ -24,4 +28,10 @@ router.get('/rooms/:id', roomController.getRoomById);
 router.put('/rooms/:id', upload.array('images', 3), roomController.updateRoom);
 // Delete room by ID (DELETE)
 router.delete('/rooms/:id', roomController.deleteRoom);
+
+router.get('/status', roomController.getRoomsStatusByDate);
+router.get('/available', roomController.getAvailableRoomsByDate);
+// Get availability for a specific room type
+router.get('/room/:roomType/availability', roomController.getRoomAvailability);
+
 module.exports = router;
